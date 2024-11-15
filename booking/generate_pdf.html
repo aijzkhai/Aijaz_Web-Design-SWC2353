@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation - Le'Grand Laviosa Hotel</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <h2>Generating your booking confirmation...</h2>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const params = new URLSearchParams(window.location.search);
+            const data = {
+                title: params.get('title'),
+                fname: params.get('fname'),
+                lname: params.get('lname'),
+                email: params.get('email'),
+                nation: params.get('nation'),
+                country: params.get('country'),
+                phone: params.get('phone'),
+                troom: params.get('troom'),
+                nroom: params.get('nroom'),
+                meal: params.get('meal'),
+                cin: params.get('cin'),
+                cout: params.get('cout')
+            };
+
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            const img = new Image();
+            img.src = 'hotel logo (no text).png';
+            img.onload = function() {
+                // Set up header with hotel logo and name
+                doc.addImage(img, 'PNG', 15, 10, 25, 25); 
+                doc.setFont("helvetica", "bold");
+                doc.setFontSize(16);
+                doc.setTextColor(0, 51, 102);
+                doc.text('Le\'Grand Laviosa Hotel', 45, 20);
+
+                // Add address and statement title
+                doc.setFontSize(10);
+                doc.setFont("helvetica", "normal");
+                doc.setTextColor(100, 100, 100);
+                doc.text('123 Luxury Lane, City of Opulence', 45, 26);
+                doc.text('Tel: (123) 456-7890 | Email: contact@laviosahotel.com', 45, 32);
+                
+                doc.setFontSize(14);
+                doc.setTextColor(0, 51, 102);
+                doc.text('Booking Confirmation Statement', 15, 50);
+
+                // Separator line
+                doc.setDrawColor(200, 200, 200);
+                doc.line(15, 55, 195, 55);
+
+                // Personalized Greeting
+                doc.setFontSize(12);
+                doc.setTextColor(33, 33, 33);
+                doc.setFont("helvetica", "italic");
+                doc.text(`Dear ${data.title} ${data.fname} ${data.lname},`, 15, 65);
+
+                // Introductory Text
+                doc.setFont("helvetica", "normal");
+                doc.text("Thank you for booking with Le'Grand Laviosa Hotel. Here are your reservation details:", 15, 75);
+
+                // Guest Information Section
+                doc.setFont("helvetica", "bold");
+                doc.setTextColor(0, 51, 102);
+                doc.text("Guest Information", 15, 90);
+
+                doc.setFont("helvetica", "normal");
+                doc.setTextColor(66, 66, 66);
+                doc.text(`Email: ${data.email}`, 15, 100);
+                doc.text(`Nationality: ${data.nation}`, 15, 110);
+                doc.text(`Passport Country: ${data.country}`, 15, 120);
+                doc.text(`Phone: ${data.phone}`, 15, 130);
+
+                // Reservation Details Section
+                doc.setFont("helvetica", "bold");
+                doc.setTextColor(0, 51, 102);
+                doc.text("Reservation Details", 15, 150);
+
+                doc.setFont("helvetica", "normal");
+                doc.setTextColor(66, 66, 66);
+                doc.text(`Room Type: ${data.troom}`, 15, 160);
+                doc.text(`Number of Rooms: ${data.nroom}`, 15, 170);
+                doc.text(`Meal Plan: ${data.meal}`, 15, 180);
+                doc.text(`Check-In Date: ${data.cin}`, 15, 190);
+                doc.text(`Check-Out Date: ${data.cout}`, 15, 200);
+
+                // Footer - Thank You Message
+                doc.setFontSize(10);
+                doc.setTextColor(0, 51, 102);
+                doc.setFont("helvetica", "italic");
+                doc.text("We look forward to welcoming you and making your stay memorable!", 15, 220);
+                doc.text("Safe travels and thank you for choosing Le'Grand Laviosa Hotel.", 15, 230);
+
+                // Automatically download the PDF
+                doc.save('Booking_Confirmation.pdf');
+            };
+        });
+    </script>
+</body>
+</html>

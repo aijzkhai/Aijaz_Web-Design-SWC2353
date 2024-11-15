@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Amenities | Le'Grand Laviosa Hotel</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Linked with Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .facilities-section {
+            text-align: center;
+            padding: 40px 20px 70px 20px;
+        }
+
+        .facilities-title {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .facilities-intro {
+            font-size: 1em;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .facilities-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .facility-card {
+            background-color: #fff;
+            max-width: 500px;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position:relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .facility-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .facility-icon {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .facility-card h2 {
+            font-size: 1.25em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        .facility-card p {
+            font-size: 0.95em;
+            color: #555;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img href="index.html" src="hotel logo.png" alt="Hotel Logo"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="rooms.html">Rooms</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="amenities.html">Amenities</a></li>
+                <li><a href="offers.html">Offers</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+<div class="facilities-section">
+    <h1 class="facilities-title">OUR AMENITIES</h1>
+    <p class="facilities-intro">
+        Discover our range of luxurious amenities designed to provide comfort and convenience during your stay.
+    </p>
+    <div class="facilities-container">
+        <div class="facility-card">
+            <i class="fas fa-wifi facility-icon"></i>
+            <h2>Wifi</h2>
+            <p>Stay connected with high-speed internet access available throughout the hotel.</p>
+        </div>
+        
+        <div class="facility-card">
+            <i class="fas fa-wind facility-icon"></i>
+            <h2>Air Conditioner</h2>
+            <p>Experience optimal comfort with individually controlled air conditioning in every room.</p>
+        </div>
+        
+        <div class="facility-card">
+            <i class="fas fa-tv facility-icon"></i>
+            <h2>Television</h2>
+            <p>Enjoy a variety of channels and entertainment options on our flat-screen TVs.</p>
+        </div>
+        
+        <div class="facility-card">
+            <i class="fas fa-spa facility-icon"></i>
+            <h2>Spa</h2>
+            <p>Relax and rejuvenate with our extensive range of spa treatments and wellness services.</p>
+        </div>
+        
+        <div class="facility-card">
+            <i class="fas fa-fire-alt facility-icon"></i>
+            <h2>Room Heater</h2>
+            <p>Keep warm with our efficient room heating systems, ensuring comfort on cooler nights.</p>
+        </div>
+        
+        <div class="facility-card">
+            <i class="fas fa-water facility-icon"></i>
+            <h2>Geyser</h2>
+            <p>Enjoy hot showers anytime with in-room geyser facilities for a refreshing start to your day.</p>
+        </div>
+    </div>
+</div>
+
+<footer class="footer" id="contact">
+    <div class="section__container footer__container">
+      <div class="footer__col">
+        <div class="logo">
+          <a href="index.html"><img src="hotel logo.png" alt="logo" /></a>
+        </div>
+        <p class="section__description">
+          Discover a world of comfort, luxury, and adventure as you explore
+          our curated selection of hotels, making every moment of your getaway
+          truly extraordinary.
+        </p>
+        <a href="booking/booking.html"><button class="btn">Book Now</button></a>
+    </div>
+      <div class="footer__col">
+        <h4>QUICK LINKS</h4>
+        <ul class="footer__links">
+          <li><a href="#">Browse Destinations</a></li>
+          <li><a href="#">Special Offers & Packages</a></li>
+          <li><a href="#">Room Types & Amenities</a></li>
+          <li><a href="#">Customer Reviews & Ratings</a></li>
+          <li><a href="#">Travel Tips & Guides</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>OUR SERVICES</h4>
+        <ul class="footer__links">
+          <li><a href="#">Concierge Assistance</a></li>
+          <li><a href="#">Flexible Booking Options</a></li>
+          <li><a href="#">Airport Transfers</a></li>
+          <li><a href="#">Wellness & Recreation</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>CONTACT US</h4>
+        <ul class="footer__links">
+          <li><a href="#">info@legrandlaviosa.com</a></li>
+        </ul>
+        <div class="footer__socials">
+          <a href="#"><img src="assets/facebook.png" alt="facebook" /></a>
+          <a href="#"><img src="assets/instagram.png" alt="instagram" /></a>
+          <a href="#"><img src="assets/youtube.png" alt="youtube" /></a>
+          <a href="#"><img src="assets/twitter.png" alt="twitter" /></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bar">
+      Copyright © 2024 Le'Grand Laviosa Hotel. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="javascript/script.js"></script>
+</body>
+</html>
